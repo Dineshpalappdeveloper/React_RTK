@@ -11,7 +11,6 @@ export const getusers = createAsyncThunk(
       if (!res) {
         return thunkAPI.rejectWithValue(res);
       }
-      console.log(res, "slice");
       return res;
     } catch (err) {
       return thunkAPI.rejectWithValue(err);
@@ -43,7 +42,7 @@ const userSlice = createSlice({
       })
       .addCase(getusers.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.userData = action.payload;
+        state.userData = action.payload.reverse();
         // state.userCount = action.payload.total_data_count;
       })
       .addCase(getusers.rejected, (state, action) => {
