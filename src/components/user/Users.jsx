@@ -20,6 +20,7 @@ import { getuser, getusers } from "../../app/redux/feature/user/UserSlice";
 import { addusers } from "../../app/redux/feature/user/AddUserSlice";
 import { updateUsers } from "../../app/redux/feature/user/updateUserSlice";
 import { deleteUsers } from "../../app/redux/feature/user/deleteUserSlice";
+import { NavLink } from "react-router-dom";
 const user = [
   {
     key: 0,
@@ -126,6 +127,9 @@ const Users = () => {
           User Details
         </h1>
         <div className="flex justify-end p-10">
+          <span className="px-24  "><NavLink to="/login" >
+            <Button variant="outlined">Login Now</Button>
+          </NavLink> </span>
           <Button variant="contained" className="captilize" onClick={() => setOpen(true)} >
             Add User
           </Button>

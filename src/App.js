@@ -1,10 +1,9 @@
 import "./App.css";
-import Users from "./components/user/Users";
 
 function App() {
   return (
     <div className="">
-      <Users />
+      <h1>Welcome To Donocare</h1>
     </div>
   );
 }
