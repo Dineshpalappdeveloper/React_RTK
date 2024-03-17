@@ -54,6 +54,25 @@ const loginUserApi = async (body) => {
     return error;
   }
 };
+
+const getAlluserApi = async (token) => {
+  try {
+    console.log(token, "token");
+    const response = await axios.post(
+      `${url}/api/user`,
+      {},
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};
+
 const userApi = {
   getusers,
   addUsersApi,
@@ -61,5 +80,6 @@ const userApi = {
   deleteUserApi,
   registerUserApi,
   loginUserApi,
+  getAlluserApi,
 };
 export default userApi;
